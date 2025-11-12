@@ -49,3 +49,6 @@ for x in numbers[:]:
         numbers.remove(x)
 print(numbers)
 
+
+Print("10+10")
+
