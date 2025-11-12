@@ -80,3 +80,8 @@ def listPalidromeCheck(list):
 testList = ["rabbit","tacocat","racecar","animal"]
 
 listPalidromeCheck(testList)
+
+original = 1, 2, 3, 4, 5
+copy = tuple(original)
+print(original)
+print(copy)

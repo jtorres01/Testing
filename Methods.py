@@ -14,6 +14,8 @@ words = string.split()
 print(words)
 checked = []
 
+print("This is testing the Python .count method ", string.count("three"))
+
 for word in words:
     if word.lower() not in checked:
         count = 0
@@ -50,5 +52,5 @@ for x in numbers[:]:
 print(numbers)
 
 
-Print("10+10")
+
 
