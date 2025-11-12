@@ -1,0 +1,28 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "TestingDB",
+            "database": "postgres",
+            "username": "postgres",
+            "connectionTimeout": 30,
+            "password": "1234"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "CarDealerShip",
+            "database": "CarDealerShip",
+            "password": "1234",
+            "connectionTimeout": 30,
+            "username": "postgres"
+        }
+    ]
+}
