@@ -27,7 +27,7 @@ def findEvenOrOdd(num):
     if num % 2 == 0:
         print("This is a Even number",num)
     if num%2 ==1:
-        print("This is a edd number",num)
+        print("This is a odd number",num)
 
 findEvenOrOdd(-5)
 
