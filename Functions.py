@@ -1,4 +1,6 @@
+from collections import defaultdict
 import random
+from typing import List
 
 name = "Jonathan"
 age = 23
@@ -85,3 +87,113 @@ original = 1, 2, 3, 4, 5
 copy = tuple(original)
 print(original)
 print(copy)
+
+
+def containsDuplicate( nums: List[int]) -> bool:
+        for x in nums:
+            if nums.count(x) >1:
+                print(nums.count(x))
+                return True
+        return False
+        
+testList = [1,2,2,3,3,3]
+print(containsDuplicate(testList))
+
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        result = defaultdict(list)
+        for word in strs:
+            sortedWord = "".join(sorted(word))
+            result[sortedWord].append(word)
+
+        return list(result.values())
+
+# neetcode Find the most frequent elements in a list
+def topKFrequent(nums: List[int], k: int) -> List[int]:
+    counter = {}
+    for x in nums:
+        counter[x] = 1 + counter.get(x,0)
+        
+    temp = []
+    for key, value in counter.items():
+        temp.append([value,key])
+    temp.sort()
+        
+    result = []
+    for i in range(k):
+        result.append(temp.pop()[1])
+
+    return result
+
+
+testList = [1,2,2,3,3,3]
+result = topKFrequent(testList,2)
+print(result)
+
+def encode(self, strs: List[str]) -> str:
+    codedWord = ""
+    for word in strs:
+        codedWord = codedWord.join
+    return codedWord
+
+
+        
+            
+
+def decode(self, s: str) -> List[str]:
+
+    return result
+
+
+def productExceptSelf( nums: List[int]) -> List[int]:
+        output = []
+        for x in range(len(nums)):
+            product = 1
+            for y in range(len(nums)):
+                if x != y:
+                    product *= nums[y] 
+            output.append(product)
+        return output    
+
+testList = [1,2,4,6]
+
+print(productExceptSelf(testList))
+
+
+def longestConsecutive(nums: List[int]) -> int:
+    if not nums:
+        return 0
+    
+    counter = 0
+    store = set(nums)
+    for num in nums: 
+        streak, number = 0 , num
+        while number in store:
+            streak += 1
+            number += 1
+        counter =  max(counter,streak)
+    return counter
+
+print(longestConsecutive([2,20,4,10,3,4,5]))
+
+alphabet = ['q', 'm', 'a', 'z', 'b', 'x', 'c', 'v', 'w', 'k', 'y', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'l', 'n', 'o', 'p', 'r', 's', 't', 'u']
+
+
+def sortAlphabet(alphabet : List[str]) -> List[str]:
+    output = sorted(alphabet)
+    return output
+
+sortedAlphabet = sortAlphabet(alphabet)
+for x in sortedAlphabet:
+    print(x)
+
+
+def countLetters(words : List[str]) -> List[int]:
+    output = []
+
+    for word in words:
+        output.append(len(word))
+    return output
+
+words = ["apple", "banana", "cherry", "date", "elderberry"]
+
+print(countLetters(words))

@@ -52,8 +52,27 @@ print(list)
 list.append("banana")
 print(list)
 
+#Put 2 lists together
+list2 = [7,8,9]
+combined = list + list2
+print("Combined lists: ", combined)
 
-#Lets do dictionsaries now immutable key:value pairs
+#Check for common items in lists
+listA = [1,8,3,4,5]
+listB = [4,5,6,7,8]
+common = []
+
+for item in listA:
+    if item in listB:
+        common.append(item)
+print("Common items in listA and listB: ", common)
+
+print(common)
+
+
+#Lets do dictionsaries  
+# Immutable key:value pairs
+# Keys are immutable however, you can still update a value and add new key:value pairs using .update()
 
 persons = {"name" : "John",
  "age" : 36, "country" : "Norway"}
@@ -64,5 +83,49 @@ print(persons)
 #persons.clear()
 #print("After clearing: ", persons)
 
-copyPersons = persons.fromkeys("name", "44")
-print("Copy of persons: ", copyPersons)
+temp = persons.get("country")
+print(temp)
+
+#finds all the keys in the dictionary
+bool = persons.keys()
+print(bool)
+
+items = persons.items()
+print(items)
+
+#adding a new key:value pair 
+persons.update({"email":"John01@yahoo.com"})
+#updating an existing key:value pair
+persons.update({"age": 37})
+print("After adding email & updating age: ", persons)
+
+#Another way to update age
+persons["age"] = 38
+
+#If the Key doesn't exsist to update, it will create a new ket:value pair
+persons["phone"] = "555-1234"
+print("After adding phone: ", persons)
+
+print("The removed item is: ", persons.pop("country"))
+print("After popping country: ", persons)
+
+# del deletes the entire dictionary
+#del persons
+
+print("There are ",len(persons)," items in the dictionary")
+
+for key in persons:
+    print(key, ":", persons[key])
+
+names = ["John", "Jane", "Doe"]
+
+for x in names:
+    print(x[len(x)-1])  # Prints last character of each name
+
+
+    
+
+
+
+
+
