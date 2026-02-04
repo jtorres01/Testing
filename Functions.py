@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import Counter, defaultdict
 import random
 from typing import List
 
@@ -197,3 +197,101 @@ def countLetters(words : List[str]) -> List[int]:
 words = ["apple", "banana", "cherry", "date", "elderberry"]
 
 print(countLetters(words))
+
+def threeSum(nums: List[int]) ->  List[List[int]]:
+        output=[]
+        seen = set()
+        for x in range(len(nums)):
+            for y in range(len(nums)):
+                if y != x:
+                    for z in range(len(nums)):
+                        if z != y and z != x:
+                            product = nums[x] + nums[y] + nums[z]
+                            #print(f"Adding index {x} from nums which is {nums[x]},index {y} from nums which is {nums[y]},index {z} from nums which is {nums[z]}")
+                            if product == 0:
+                                triplet = tuple(sorted([nums[x], nums[y], nums[z]]))
+                                if triplet not in seen:
+                                    seen.add(triplet)
+                                    output.append(list(triplet))
+                                
+
+        return output
+
+listNums = [-1,0,1,2,-1,-4]
+print(threeSum(listNums))
+
+def maxArea (heights: List[int]) -> int:
+    maxWater = 0
+    left = 0
+    right = len(heights) -1
+
+    while(left<right):
+        product = min(heights[left] , heights[right]) * (right -1 )
+        maxWater = max(maxWater, product)
+        if left < right:
+            left +=1
+        else:
+            right -= 1
+    return maxWater
+
+def maxProfit(prices: List[int]) -> int:
+    maxProfit = 0
+    minNumIndex = prices.index(min(prices))
+    for num in range(minNumIndex,len(prices)):
+        product = prices[num] -prices[minNumIndex] 
+        maxProfit = max(maxProfit, product)
+    return maxProfit
+
+
+prices = [10,1,5,6,7,1]
+print(maxProfit(prices))
+
+
+def binarySearch(nums: List[x], target:int):
+    low = 0
+    high = len(list) - 1
+    
+    while high > low:
+        med = (list[high] - list[low]) - 1
+
+        if nums[med] == target:
+            return med
+        if nums[med] > target:
+            high = med - 1
+        else:
+            low = med + 1
+
+    return -1
+
+    
+print(listNums)
+listNums.reverse()
+print(listNums)
+
+
+#self & skills
+
+#Tell me about a time you were asked to give contructive feedback to a coworker
+
+
+tempString = "I am going to create this string to test" \
+"out how the Counter collection works!"
+
+c = Counter(tempString)
+#print(c)
+print("Most common outputs this: " ,c.most_common(2))
+
+def searchInsert(nums: List[int], target: int) -> int:
+        nums.append(target)
+        nums = sorted(nums)
+        print("SOrted LIst " , nums)
+
+        for x in range(len(nums)):
+            print("x is: " ,x)
+            if nums[x] == target:
+                return x
+        
+
+nums = [-1,0,2,4,6,8] 
+target = 10
+print(f"Index of {target} would be at: " ,searchInsert(nums,target))

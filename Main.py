@@ -1,4 +1,5 @@
-x = "hello"
-x = x.upper()
-print(x)
-
+a = "hi"
+b =a 
+b ="Hello"
+print(b)
+print(a)

@@ -1,8 +1,9 @@
 import array
+
 tester = array.array('i', [1,2,3,4,5])
 
 #Find length of array
-print("Length of arrya is ",len(tester))
+print("Length of array is ",len(tester))
 
 #Accessing elements
 print("Finding element at index 3: ", tester[3])
@@ -40,6 +41,7 @@ print("Appending d: ", stringArray)
 
 #tuple is made with parenthesis () immutable
 #list is made with square brackets [] mutable
+#dictionaries use curly braces {} key:value pairs
 tuple =("apple",3,"cherry")
 list = ["apple",3,"cherry"]
 print(tuple)
@@ -65,9 +67,13 @@ common = []
 for item in listA:
     if item in listB:
         common.append(item)
+
+common.sort()
 print("Common items in listA and listB: ", common)
 
-print(common)
+
+
+
 
 
 #Lets do dictionsaries  
@@ -79,19 +85,22 @@ persons = {"name" : "John",
 
 print(persons)
 
-#
-#persons.clear()
-#print("After clearing: ", persons)
+
+# persons.clear()
+# print("After clearing: ", persons)
 
 temp = persons.get("country")
-print(temp)
+print(".get method returns: " ,temp)
 
 #finds all the keys in the dictionary
-bool = persons.keys()
-print(bool)
+#bool = persons.keys()
+print(persons.keys())
 
-items = persons.items()
-print(items)
+#items = persons.items()
+print(persons.items())
+
+# values returns all the values in the dictionary
+print(persons.values())
 
 #adding a new key:value pair 
 persons.update({"email":"John01@yahoo.com"})
@@ -103,7 +112,8 @@ print("After adding email & updating age: ", persons)
 persons["age"] = 38
 
 #If the Key doesn't exsist to update, it will create a new ket:value pair
-persons["phone"] = "555-1234"
+persons.update({"phone":"555-4321"})
+#persons["phone"] = "555-1234"
 print("After adding phone: ", persons)
 
 print("The removed item is: ", persons.pop("country"))
@@ -117,10 +127,19 @@ print("There are ",len(persons)," items in the dictionary")
 for key in persons:
     print(key, ":", persons[key])
 
-names = ["John", "Jane", "Doe"]
+names = ["John", "Jane", "Danny"]
 
+# Prints last character of each name
 for x in names:
-    print(x[len(x)-1])  # Prints last character of each name
+    print(x[-1]) 
+
+def rememberPalidrome(givenString):
+    if givenString == givenString[::-1]:
+        print(f"{givenString} should be a palidrome")
+    else:
+        print(f"{givenString} is not a palidrome")
+
+rememberPalidrome("tacocat")
 
 
     
